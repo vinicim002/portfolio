@@ -1,5 +1,7 @@
+import { AboutMe } from './components/AboutMe';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
+import { Technologies } from './components/Technologies';
 import './styles/global.css';
 import './styles/theme.css';
 
@@ -8,7 +10,8 @@ export function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
-      <h1>Hello World</h1>
+      <AboutMe></AboutMe>
+      <Technologies></Technologies>
     </>
   );
 }
