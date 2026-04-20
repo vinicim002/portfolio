@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry
                 .addMapping("/**")  // Permitir em todos os endpoints
                 .allowedOrigins(
-                        "http://localhost:3000",      // React (desenvolvimento)
+                        "http://localhost:5173",      // React (desenvolvimento)
                         "http://localhost:3001"       // React (outra porta, se usar)
                         // "https://seusite.com"      // Descomente em produção
                 )
