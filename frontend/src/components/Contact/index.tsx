@@ -1,28 +1,52 @@
+import { Mail } from 'lucide-react';
+
 export function Contact() {
   return (
     <>
-      <div className='contactContainer m-auto px-6'>
-        <div className='contactContent'>
-          <h2>Contato</h2>
-          <p>Interessado em escalar sua próxima ideia?</p>
-          <div className='contactInfo'>
-            <div className='contactIcon'>email</div>
-            <div className='contactInfoDescription'>
-              <h3>Email</h3>
-              <p>teste@gmail.com</p>
+      <div className='contactContainer mx-56 px-8 py-20 flex flex-row justify-between items-center'>
+        <div className='contactContent flex flex-col gap-12'>
+          <h2 className='text-7xl font-bold'>Contato</h2>
+          <p className='text-text-dim text-base'>
+            Interessado em escalar sua próxima ideia?
+          </p>
+          <div className='contactInfo flex flex-col gap-8'>
+            <div className='flex items-center gap-4'>
+              <div className='contactIcon glass p-4 border-border-glass rounded-xl'>
+                <Mail />
+              </div>
+              <div className='contactInfoDescription flex flex-col gap-2'>
+                <h3 className='text-text-dim font-semibold text-xs'>Email</h3>
+                <p className='font-bold text-base'>teste@gmail.com</p>
+              </div>
             </div>
-            <div className='contactInfoDescription'>
-              <h3>LinkedIn</h3>
-              <p>linkedin.com/in/devportfolio</p>
+
+            <div className='flex items-center gap-4'>
+              <div className='contactIcon glass p-4 border-border-glass rounded-xl'>
+                <Mail />
+              </div>
+              <div className='contactInfoDescription flex flex-col gap-2'>
+                <h3 className='text-text-dim font-semibold text-xs'>
+                  LinkedIn
+                </h3>
+                <p className='font-bold text-base'>
+                  linkedin.com/in/devportfolio
+                </p>
+              </div>
             </div>
-            <div className='contactInfoDescription'>
-              <h3>GitHub</h3>
-              <p>github.com/devportfolio</p>
+
+            <div className='flex items-center gap-4'>
+              <div className='contactIcon glass p-4 border-border-glass rounded-xl'>
+                <Mail />
+              </div>
+              <div className='contactInfoDescription flex flex-col gap-2'>
+                <h3 className='text-text-dim font-semibold text-xs'>GitHub</h3>
+                <p className='font-bold text-base'>github.com/devportfolio</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className='contactForm'>
+        <div className='contactForm flex flex-col gap-8 glass p-8 rounded-xl border-border-glass'>
           <div className='contactFormInfoPesoal'>
             <label htmlFor='nome'>
               Nome:
@@ -55,7 +79,7 @@ export function Contact() {
             ></textarea>
           </label>
 
-          <button type='submit'>Enviar mensagem</button>
+          <button type='submit' className='bg-[#f8fafc] text-bg p-4 rounded-xl font-bold'>Enviar mensagem 🚀</button>
         </div>
       </div>
     </>
