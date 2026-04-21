@@ -1,5 +1,6 @@
 package com.vinicius.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.vinicius.backend.enums.SkillCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)  // ← ADICIONE ISTO
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
