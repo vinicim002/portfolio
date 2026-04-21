@@ -2,6 +2,7 @@ package com.vinicius.backend.controllers;
 
 import com.vinicius.backend.entities.Message;
 import com.vinicius.backend.services.MessageService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,31 +41,19 @@ public class MessageController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createMessage(@RequestBody Message message) {
+    public ResponseEntity<String> createMessage(@Valid @RequestBody Message message) {
         try {
             log.info("Requisição POST /messages recebida de: {}", message.getEmail());
-
             messageService.createMessage(message);
-
             log.info("Mensagem criada e email enviado com sucesso!");
-
             return ResponseEntity
                     .status(HttpStatus.CREATED)
-                    .body("✅ Mensagem enviada com sucesso! Em breve entraremos em contato.");
-
-        } catch (IllegalArgumentException e) {
-            // Erro de validação (dados incompletos)
-            log.warn("Erro de validação: {}", e.getMessage());
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body("❌ Erro de validação: " + e.getMessage());
-
+                    .body("Mensagem enviada com sucesso!");
         } catch (Exception e) {
-            // Erro genérico (problema no servidor)
             log.error("Erro ao processar mensagem: {}", e.getMessage(), e);
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("❌ Erro ao processar sua mensagem. Tente novamente mais tarde.");
+                    .body("Erro ao processar sua mensagem. Tente novamente mais tarde.");
         }
     }
 }
