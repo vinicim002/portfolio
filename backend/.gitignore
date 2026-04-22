@@ -34,3 +34,4 @@ build/
 
 ### DotEnv ###
 **/application-dev.properties
+**/application-local.properties
