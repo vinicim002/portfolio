@@ -36,6 +36,11 @@
   }
 
   .logoNavbar {
-  @apply font-extrabold uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-}
+    @apply font-extrabold uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+  }
 }
